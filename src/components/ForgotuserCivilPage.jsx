@@ -10,6 +10,7 @@ const ForgotCivilPage = () => {
   const navigate = useNavigate();
 
   const validateCivilNumber = (value) => {
+    if (!value) return 'Enter the civil number';
     const numericOnly = /^\d+$/;
     if (!numericOnly.test(value)) return 'Civil number must contain only numbers';
     if (value.length !== 12) return 'Civil number must be exactly 12 digits';
@@ -36,19 +37,18 @@ const ForgotCivilPage = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="forgot-civil-form-group">
-            <div className="forgot-civil-input-wrapper">
+            <div className={`forgot-civil-input-wrapper ${error ? 'input-error' : ''}`}>
               <img src={VectorIcon} alt="Vector Icon" className="forgot-civil-icon" />
               <input
                 type="text"
                 value={civilNumber}
                 onChange={(e) => setCivilNumber(e.target.value)}
                 placeholder="Enter Civil Number *"
-                required
               />
             </div>
+            {error && <p className="forgot-civil-error">{error}</p>}
           </div>
           <button type="submit" className="forgot-civil-button">Confirm</button>
-          {error && <p className="forgot-civil-error">{error}</p>}
         </form>
 
         <a href="/forgot-password" className="forgot-civil-link">Forgot Password ?</a>

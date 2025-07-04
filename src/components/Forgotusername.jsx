@@ -16,6 +16,7 @@ const ForgotUsername = () => {
   const navigate = useNavigate();
 
   const validateLicenseNumber = (value) => {
+    if (!value) return 'Enter the license number';
     const numericOnly = /^\d+$/;
     if (!numericOnly.test(value)) return 'License number must contain only numbers';
     if (value.length !== 12) return 'License number must be exactly 12 digits';
@@ -57,14 +58,13 @@ const ForgotUsername = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <div className="input-with-icon underline-style">
+            <div className={`input-with-icon underline-style ${error ? 'input-error' : ''}`}>
               <img src={VectorIcon} alt="Vector Icon" className="vector-icon" />
               <input
                 type="text"
                 value={licenseNumber}
                 onChange={(e) => setLicenseNumber(e.target.value)}
                 placeholder="Enter License Number *"
-                required
               />
             </div>
             {error && <p className="error-text">{error}</p>}
