@@ -1,0 +1,108 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px 20px;
+  border-radius: 24px;
+  width: 300px;
+  height:500px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.modal-close-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.modal-otp-icon {
+  width: 160px;
+  height: 160px;
+  margin: 10px 0;
+}
+
+.otp-instruction {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #444;
+  text-align: center;
+}
+
+.otp-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.otp-box {
+  width: 42px;
+  height: 40px;
+  font-size: 22px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.resend-text {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.resend-link {
+  color: #d32f2f;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.signup-button {
+  background-color: #d32f2f;
+  color: white;
+  padding: 10px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.signup-button:hover {
+  background-color: #b71c1c;
+}
